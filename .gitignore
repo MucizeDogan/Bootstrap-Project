@@ -1,0 +1,15 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Build çıktıları (opsiyonel)
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
