@@ -1,0 +1,171 @@
+#mainNav {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+
+    html {
+        height: 100%;
+        //scroll-padding-top: calc(#{$navbar-height} - 1px);
+    }
+
+    // Styling for page sections
+    .page-section {
+        padding: 6rem 0;
+
+        .page-section-heading {
+            font-size: 2.25rem;
+            line-height: 2rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            .page-section-heading {
+                font-size: 3rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
+
+    .navbar-brand {
+        color: white;
+    }
+
+    .navbar-nav {
+        margin-top: 1rem;
+
+        li.nav-item {
+            a.nav-link {
+                color: white;
+
+                &:hover {
+                    color: $primary;
+                }
+
+                &:active,
+                &:focus {
+                    color: white;
+                }
+
+                &.active {
+                    color: white;
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+
+}
+
+.masthead {
+    padding-top: calc(6rem + 16px);
+    padding-bottom: 5rem;
+
+    .masthead-avatar {
+        width: 15rem;
+        border-radius: 50%;
+    }
+
+    .masthead-caption {
+        font-size: 3rem;
+        overflow: hidden;
+    }
+
+    .masthead-alt-caption {
+        font-size: 1.5rem;
+
+    }
+}
+@include media-breakpoint-up(lg) {
+    .masthead {
+        padding-top: calc(6rem + 32px);
+        padding-bottom: 6rem;
+
+        .masthead-heading {
+            font-size: 4rem;
+            line-height: 3.5rem;
+        }
+
+        .masthead-subheading {
+            font-size: 1.5rem;
+        }
+
+    }
+}
+
+.divider-custom {
+    margin: 1.25rem 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .divider-custom-line {
+        width: 100%;
+        max-width: 7rem;
+        height: 0.25rem;
+        background-color: $secondary;
+        border-radius: 1rem;
+        border-color: $secondary;
+
+        &:first-child {
+            margin-right: 1rem;
+        }
+
+        &:last-child {
+            margin-left: 1rem;
+        }
+    }
+
+    .divider-custom-icon {
+        color: $secondary;
+        font-size: 2rem;
+    }
+
+    &.divider-light {
+        .divider-custom-line {
+            background-color: $white;
+        }
+
+        .divider-custom-icon {
+            color: $white;
+        }
+    }
+}
+
+#myProjects {
+    .myProjects-item {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        max-width: 25rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .myProjects-item-caption {
+            position: absolute;
+            inset: 0; // top, right, bottom, left = 0
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+            background-color: fade-out($primary, 0.1);
+        }
+
+        &:hover .myProjects-item-caption {
+            opacity: 1;
+        }
+
+        .myProjects-item-caption-content {
+            font-size: 4rem;
+        }
+    }
+}
