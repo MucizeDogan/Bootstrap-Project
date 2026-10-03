@@ -229,3 +229,124 @@
     align-items: center;
 }
 
+
+// Hero contact call-to-action
+.masthead-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+// Professional hero contact CTA
+.masthead-cv-button {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.9rem 1.5rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+    &:hover { transform: translateY(-2px); }
+}
+
+.masthead-contact-cta {
+    width: min(100%, 42rem);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
+    text-align: left;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.08);
+
+    .masthead-contact-icon {
+        width: 3.25rem; height: 3.25rem; display: inline-flex; align-items: center; justify-content: center;
+        flex: 0 0 auto; border-radius: 0.85rem; color: $primary; background: $white; font-size: 1.25rem;
+    }
+
+    .masthead-contact-copy {
+        min-width: 0;
+        p { font-size: 1.15rem; font-weight: 700; }
+        span { display: block; color: rgba(255, 255, 255, 0.82); font-size: 0.92rem; line-height: 1.45; }
+    }
+
+    .masthead-contact-button {
+        white-space: nowrap; font-weight: 700; transition: transform 0.2s ease;
+        &:hover { transform: translateX(2px); }
+    }
+}
+
+// Professional contact section
+.contact-heading-text {
+    max-width: 42rem; margin: 0 auto 2.75rem; color: $gray-600; font-size: 1.05rem; line-height: 1.7;
+}
+
+.contact-panel {
+    overflow: hidden; border: 1px solid $gray-200; border-radius: 1.25rem; background: $white;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.08);
+}
+
+.contact-panel-intro {
+    padding: 3rem; background: $secondary; color: $white;
+    .contact-panel-eyebrow { display: inline-block; margin-bottom: 1rem; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.14em; opacity: 0.7; }
+    h3 { margin-bottom: 1.25rem; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.15; }
+    > p { margin-bottom: 2.25rem; color: rgba(255, 255, 255, 0.75); line-height: 1.75; }
+}
+
+.contact-detail {
+    display: flex; align-items: center; gap: 0.9rem; margin-top: 1.25rem;
+    .contact-detail-icon { width: 2.75rem; height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 0.7rem; color: $white; background: rgba(255, 255, 255, 0.08); }
+    small { display: block; margin-bottom: 0.15rem; color: rgba(255, 255, 255, 0.55); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    a, > div > span { color: $white; font-size: 0.9rem; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+}
+
+.contact-panel-form {
+    padding: 3rem;
+    .form-control {
+        border-color: $gray-300; background-color: $gray-100;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        &:focus { border-color: $primary; background-color: $white; box-shadow: 0 0 0 0.2rem rgba($primary, 0.12); }
+    }
+    textarea.form-control { min-height: 11rem; resize: vertical; }
+}
+
+.contact-form-note { color: $gray-600; }
+
+.contact-submit-button {
+    min-width: 10.5rem; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease;
+    &:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 0.6rem 1.25rem rgba(0, 0, 0, 0.12); }
+}
+
+.contact-form-status {
+    margin-bottom: 1.5rem; padding: 1rem 1.25rem; border-radius: 0.75rem; font-weight: 600; line-height: 1.5;
+}
+
+.contact-form-status-success { color: darken($primary, 25%); background-color: lighten($primary, 42%); border: 1px solid lighten($primary, 25%); }
+.contact-form-status-error { color: #842029; background-color: #f8d7da; border: 1px solid #f1aeb5; }
+#contactMe { scroll-margin-top: 5rem; }
+
+@media (max-width: 991.98px) {
+    .contact-panel-intro, .contact-panel-form { padding: 2.25rem; }
+}
+
+@media (max-width: 767.98px) {
+    .masthead-contact-cta {
+        grid-template-columns: auto 1fr;
+        .masthead-contact-button { grid-column: 1 / -1; width: 100%; margin-top: 0.25rem; }
+    }
+    .contact-panel-intro, .contact-panel-form { padding: 1.75rem; }
+}
+
+@media (max-width: 575.98px) {
+    .masthead-contact-cta {
+        padding: 1rem; border-radius: 0.85rem;
+        .masthead-contact-icon { width: 2.8rem; height: 2.8rem; }
+        .masthead-contact-copy p { font-size: 1rem; }
+        .masthead-contact-copy span { font-size: 0.82rem; }
+    }
+    .contact-panel-form .contact-submit-button { width: 100%; }
+}
